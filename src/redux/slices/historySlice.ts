@@ -2,7 +2,10 @@
 
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
+type initState = {
+  searchedPokemon: string[],
+}
+const initialState:initState = {
   searchedPokemon: [],
 }
 
@@ -12,8 +15,8 @@ export const historySlice = createSlice({
   reducers: {
     addToHistory: (state, action) => {
       state.searchedPokemon = [
-        // ...state.searchedPokemon,
-        // action.payload,
+        ...state.searchedPokemon,
+        action.payload,
       ]
     }
   }
